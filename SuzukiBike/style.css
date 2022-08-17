@@ -6,6 +6,10 @@
   font-family: "Ubuntu", sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
 :root {
   --black: #2f2f2f;
   --white: #fff;
@@ -15,7 +19,7 @@
   position: relative;
   min-height: 100vh;
   background: linear-gradient(#1c1c1c, #323232);
-  padding: 30px 100px;
+  padding: 30px 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +40,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 30px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +59,7 @@ header {
   color: var(--white);
   margin-left: 40px;
   text-decoration: none;
-  transition: 0.25s;
+  transition: 0.35s;
 }
 .navigation li a:hover {
   color: var(--red);
@@ -66,11 +70,11 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 60px;
   z-index: 1;
 }
 .content h2 {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 300;
   color: var(--white);
   text-align: center;
@@ -87,4 +91,49 @@ header {
   margin-top: 20px;
   border-radius: 50px;
   font-size: 1.25em;
+  transition: 0.35s;
+}
+.btn:hover {
+  letter-spacing: 4px;
+}
+.bike {
+  max-width: 80%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sci {
+  display: flex;
+}
+.sci li {
+  list-style: none;
+}
+.sci li a {
+  color: var(--white);
+  font-size: 2em;
+  margin-right: 20px;
+  transition: 0.35s;
+}
+.sci li a:hover {
+  color: var(--red);
+}
+.dots {
+  display: flex;
+}
+.dots .dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.dots .dot.active {
+  background: var(--white);
 }
