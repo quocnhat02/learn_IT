@@ -30,6 +30,10 @@
 }
 .banner .content h2 {
   color: #fff;
+  font-size: 60px;
+}
+.banner .content p {
+  color: #fff;
   font-size: 18px;
 }
 .banner header {
@@ -87,4 +91,35 @@
   width: 50%;
   background-size: cover;
   background-position: center;
+}
+.services {
+  background: #12222d;
+  padding: 100px;
+  text-align: center;
+  z-index: 1000;
+}
+.services .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.services .container .serviceBx {
+  position: relative;
+  background: #fff;
+  width: 350px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .container .serviceBx img {
+  max-width: 100px;
+}
+.services .container .serviceBx h2 {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
