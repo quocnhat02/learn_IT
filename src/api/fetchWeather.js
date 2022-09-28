@@ -12,7 +12,7 @@ const fetchWeather = async (query) => {
     },
   });
 
-  return DataTransfer;
+  return data;
 };
 
 export { fetchWeather };
