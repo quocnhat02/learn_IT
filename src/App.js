@@ -5,12 +5,14 @@ import './App.css';
 
 const App = () => {
   const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
 
   const search = async (e) => {
     if (e.key === 'Enter') {
       const data = await fetchWeather(query);
 
-      console.log(data);
+      setWeather(data);
+      setQuery('');
     }
   };
 
