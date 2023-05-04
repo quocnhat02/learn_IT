@@ -1,6 +1,7 @@
 import { FC, createContext } from 'react';
 import './App.css';
-import Person, { EHairColor } from './components/Person';
+import Person from './components/Person';
+import { EHairColor } from './Enums';
 
 interface IAppContext {
   name: string;
