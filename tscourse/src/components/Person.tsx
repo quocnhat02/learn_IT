@@ -16,9 +16,6 @@ interface IProps {
 const Person: FC<IProps> = ({ name, email, age, hairColor }) => {
   const [country, setCountry] = useState<string | null>('');
 
-  type NameType = 'Nhat' | 'Trau' | 'Sieu';
-  const nameForType: NameType = 'Sieu';
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCountry(e.target.value);
   };
