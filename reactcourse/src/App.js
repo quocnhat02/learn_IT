@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function App() {
   const [data, setData] = useState('');
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     axios
@@ -14,7 +15,13 @@ function App() {
       });
   }, []);
 
-  return <div>{data}</div>;
+  return (
+    <div>
+      {data} <br />
+      {count}
+      <button onClick={() => setCount(count + 1)}>Click</button>
+    </div>
+  );
 }
 
 export default App;
