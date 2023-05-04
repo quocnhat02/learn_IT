@@ -1,12 +1,19 @@
 import { ChangeEvent, FC, useState } from 'react';
 
+export enum EHairColor {
+  Blonde = 'Your hair is blonde, good for you',
+  Brown = 'Cool hair color',
+  Pink = 'Wow that is so cool',
+}
+
 interface IProps {
   name: string;
   age: number;
   email: string;
+  hairColor: EHairColor;
 }
 
-const Person: FC<IProps> = ({ name, email, age }) => {
+const Person: FC<IProps> = ({ name, email, age, hairColor }) => {
   const [country, setCountry] = useState<string | null>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,6 +31,8 @@ const Person: FC<IProps> = ({ name, email, age }) => {
         onChange={handleChange}
       />
       {country}
+      <br />
+      {hairColor}
     </div>
   );
 };
