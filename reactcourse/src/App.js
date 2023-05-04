@@ -1,42 +1,20 @@
 /* eslint-disable default-case */
-import { useReducer } from 'react';
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        counter: state.counter + 1,
-        showText: state.showText,
-      };
-
-    case 'TOGGLESHOWTEXT':
-      return {
-        counter: state.counter,
-        showText: !state.showText,
-      };
-
-    default:
-      return state;
-  }
-};
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, { counter: 0, showText: true });
+  const [data, setData] = useState('');
 
-  return (
-    <div>
-      {state.counter} <br />
-      <button
-        onClick={() => {
-          dispatch({ type: 'INCREMENT' });
-          dispatch({ type: 'TOGGLESHOWTEXT' });
-        }}
-      >
-        Increment
-      </button>
-      {state.showText && <p>This is a text</p>}
-    </div>
-  );
+  useEffect(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/comments')
+      .then((res) => {
+        setData(res.data[0].email);
+        console.log('API WAS CALLED');
+      });
+  }, []);
+
+  return <div>{data}</div>;
 }
 
 export default App;
