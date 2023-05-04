@@ -1,17 +1,40 @@
-import { useState } from 'react';
+/* eslint-disable default-case */
+import { useReducer } from 'react';
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        counter: state.counter + 1,
+        showText: state.showText,
+      };
+
+    case 'TOGGLESHOWTEXT':
+      return {
+        counter: state.counter,
+        showText: !state.showText,
+      };
+
+    default:
+      return state;
+  }
+};
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
-  const increment = () => {
-    setCounter((counter) => counter + 1);
-  };
+  const [state, dispatch] = useReducer(reducer, { counter: 0, showText: true });
 
   return (
     <div>
-      {counter} <br />
-      <button onClick={increment}>Increment</button>
-      <button onClick={() => setCounter(0)}>Reset</button>
+      {state.counter} <br />
+      <button
+        onClick={() => {
+          dispatch({ type: 'INCREMENT' });
+          dispatch({ type: 'TOGGLESHOWTEXT' });
+        }}
+      >
+        Increment
+      </button>
+      {state.showText && <p>This is a text</p>}
     </div>
   );
 }
