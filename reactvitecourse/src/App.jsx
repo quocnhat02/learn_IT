@@ -1,12 +1,28 @@
-import { useState } from 'react';
-import Counter from './Counter';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [check, setCheck] = useState('You need to click more');
+  const [todos, setTodos] = useState([]);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const res = await fetch(
+        'https://jsonplaceholder.typicode.com/users'
+      );
+      const data = await res.json();
+
+      setTodos(data);
+    };
+
+    fetchTodos();
+  }, []);
 
   return (
     <div>
-      <Counter check={check} setCheck={setCheck} />
+      <h2 onClick={() => setCount((count) => count + 1)}>{count}</h2>
+      {todos.map((todo) => (
+        <h3 key={todo.id}>{todo.name}</h3>
+      ))}
     </div>
   );
 }
