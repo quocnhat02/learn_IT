@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div>
-      <Counter check={check} />
+      <Counter check={check} setCheck={setCheck} />
     </div>
   );
 }
