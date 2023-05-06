@@ -22,4 +22,10 @@ export default async function handle(req, res) {
     });
     res.json(productDoc);
   }
+
+  if (method === 'PUT') {
+    const { _id, title, description, price } = req.body;
+    await Product.updateOne({ _id }, { title, description, price });
+    res.json(true);
+  }
 }
