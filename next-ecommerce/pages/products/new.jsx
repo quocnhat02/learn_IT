@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import Layout from '../../components/Layout';
+import axios from 'axios';
 
 const NewProduct = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
 
-  const createProduct = (e) => {
+  const createProduct = async (e) => {
     e.preventDefault();
     const data = { title, description, price };
-    axios.post('/api/products', data);
+    await axios.post('/api/products', data);
   };
 
   return (
     <Layout>
-      <form action='' onSubmit={createProduct}>
+      <form onSubmit={createProduct}>
         <h1>New Product</h1>
         <label>Product name</label>
         <input

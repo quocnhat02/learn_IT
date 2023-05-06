@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose';
-import Products from '../pages/products';
 
 const ProductSchema = new Schema({
   title: String,
@@ -10,4 +9,4 @@ const ProductSchema = new Schema({
   },
 });
 
-export const Product = model('Product', Products);
+export const Product = model('Product', ProductSchema);
