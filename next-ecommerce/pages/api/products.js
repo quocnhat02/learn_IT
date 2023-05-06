@@ -1,3 +1,5 @@
 export default function handle(req, res) {
-  res.json(req);
+  const { method } = req;
+  if (method === 'POST') {
+  }
 }
