@@ -47,7 +47,6 @@ const Products = () => {
                   </svg>
                   Edit
                 </Link>
-                <Link>Delete</Link>
               </td>
             </tr>
           ))}
