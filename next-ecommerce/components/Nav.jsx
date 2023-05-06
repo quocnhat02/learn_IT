@@ -1,8 +1,12 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Nav = () => {
   const inactiveLink = 'flex gap-1 p-1';
   const activeLink = inactiveLink + ' bg-white text-blue-900 rounded-l-lg';
+
+  const router = useRouter();
+  console.log({ router });
 
   return (
     <aside className='text-white p-4 pr-0'>
