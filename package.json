@@ -1,0 +1,33 @@
+{
+  "name": "nodejs_fs_backend",
+  "version": "1.0.0",
+  "description": "Nodejs Rest API Backend Service",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quocnhat02/nodejs_swagger.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "RestAPI",
+    "service"
+  ],
+  "author": "Nhat Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quocnhat02/nodejs_swagger/issues"
+  },
+  "homepage": "https://github.com/quocnhat02/nodejs_swagger#readme",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
