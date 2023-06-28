@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
+// import routers
+const userRouter = require('../router/userRouter');
+
 const app = express();
 
 // use middleware to form our contract for incoming json payloads ONLY!!
@@ -15,11 +18,8 @@ app.use(
 app.use(cors());
 
 // health point or actuator
-app.get('/', (req, res, next) => {
-  res.status(200).json({
-    message: 'Service is up',
-  });
-});
+// http://localhost:5000
+app.get('/users', userRouter);
 
 // router
 // app.use('/register', registrationRouter)
