@@ -19,10 +19,12 @@ app.use(cors());
 
 // health point or actuator
 // http://localhost:5000
-app.get('/users', userRouter);
+app.get('/', (req, res) => {
+  res.status(200).json('Hello World');
+});
 
 // router
-// app.use('/register', registrationRouter)
+app.use('/users', userRouter);
 
 // bad url or error we can handle
 // with middleware
