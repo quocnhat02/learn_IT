@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const fs = require('fs');
+const { readAllTask } = require('./model/task');
 
 yargs.command({
   command: 'test',
@@ -29,11 +29,7 @@ yargs.command({
     },
   },
   handler: (args) => {
-    const buffer = fs.readFileSync('task.json');
-    console.log(buffer);
-    // const { title, description } = args;
-    // console.log(title);
-    // console.log(description);
+    console.log(readAllTask());
   },
 });
 
