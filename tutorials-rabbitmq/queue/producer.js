@@ -22,6 +22,7 @@ const sendQueue = async ({ msg }) => {
     // send to queue
     await channel.sendToQueue(nameQueue, Buffer.from(msg), {
       //   expiration: '10000', // TTL - time to live
+      persistent: true,
     });
 
     // close conn and channel

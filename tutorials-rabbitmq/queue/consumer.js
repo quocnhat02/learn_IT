@@ -16,7 +16,7 @@ const receiveQueue = async () => {
 
     // add queue to channel
     await channel.assertQueue(nameQueue, {
-      durable: false,
+      durable: true,
     });
 
     // send to queue
