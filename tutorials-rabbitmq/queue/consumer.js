@@ -1,12 +1,12 @@
 const amqplib = require('amqplib');
 const ampq_url_cloud =
   'amqps://jxftvntr:uuH3--JQYmGQyPg4Wm2jzltn2owd_GAn@octopus.rmq3.cloudamqp.com/jxftvntr';
-const amqp_url_docker = '';
+const amqp_url_docker = 'amqp://localhost:5672';
 
 const receiveQueue = async () => {
   try {
     // create connect
-    const conn = await amqplib.connect(ampq_url_cloud);
+    const conn = await amqplib.connect(amqp_url_docker);
 
     // create channel
     const channel = await conn.createChannel();
